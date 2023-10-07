@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_snips_home">
+
+
+    <fragment
+        android:id="@+id/navigation_lumina_home"
+        android:name="com.feylabs.movie_genre.ui.MovieGenreExampleFragment"
+        android:label="Lumina">
+
+        <deepLink app:uri="@string/route_lumina_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_lumina_s"
+        android:name="com.feylabs.movie_genre.ui.MovieGenreExampleFragment"
+        android:label="Lumina">
+
+        <deepLink app:uri="@string/route_lumina_homes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_snips_home"
+        android:name="com.feylabs.feat_ui_home.ui.SnipsHomeFragment"
+        android:label="Snips Home">
+
+        <deepLink app:uri="@string/route_lumina_homes" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_movie_by_genre"
+        android:name="com.feylabs.feat_ui_movie_by_genre.MovieByGenreFragment"
+        >
+        <deepLink app:uri="@string/route_movie_by_genre"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_movie_detail"
+        android:name="com.feylabs.feat_ui_movie_by_genre.MovieDetailFragment"
+        android:label="Movie Detail">
+        <deepLink app:uri="@string/route_movies_detail"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_movies_viewer"
+        android:name="com.feylabs.movie_genre.ui.MovieGenreExampleFragment"
+        >
+        <deepLink app:uri="@string/route_movies_home"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_movies_review"
+        android:name="com.feylabs.feat_ui_movie_reviews.MovieReviewsFragment"
+        >
+        <deepLink app:uri="@string/route_movies_reviews"/>
+    </fragment>
+
+
+</navigation>

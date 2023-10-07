@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Mandiri Movie Hub"
+include ':app'
+include ':core'
+include ':uikit'
+include ':shared-dependencies'
+include ':feature:feat-ui-home'
+include ':feature:movie-genre'
+include ':feature:feat-ui-movie-by-genre'
+include ':feature:feat-ui-movie-reviews'
