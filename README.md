@@ -34,6 +34,9 @@ Mandiri Movie Hub is an Android app tailored for movie enthusiasts, seamlessly i
 - **Image Loading:** Glide
 - **UI/UX:** Material Design Components
 
+- <img src="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg" alt="App Demo" width="480">
+
+
 ## Contributing
 
 We welcome contributions! Review our guidelines and conventions before starting.
