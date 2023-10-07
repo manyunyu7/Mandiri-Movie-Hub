@@ -38,6 +38,10 @@ Mandiri Movie Hub is an Android app tailored for movie enthusiasts, seamlessly i
 
 We welcome contributions! Review our guidelines and conventions before starting.
 
+## Preview
+<img src="./preview.gif" alt="App Demo" width="480">
+
+
 ### Guidelines
 
 1. Fork this repository, create a new branch.
