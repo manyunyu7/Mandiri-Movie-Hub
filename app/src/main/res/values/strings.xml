@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Snip by Stockbit</string>
+    <string name="app_name">PokemonHub</string>
     <string name="title_activity_main_router">MainRouterActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

@@ -7,7 +7,7 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_mv_hub"
+        android:icon="@mipmap/ic_mv_hubs"
         android:label="@string/app_name"
         android:name=".Application"
         android:networkSecurityConfig="@xml/network_security_config"
