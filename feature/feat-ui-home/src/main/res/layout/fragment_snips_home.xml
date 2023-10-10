@@ -33,6 +33,18 @@
                 app:sectionSeeAll=""
                 app:sectionTitle="Pokemon List" />
 
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:queryHint="Search Pokemon"/>
+
+
             <com.feylabs.uikit.listcomponent.pokemon_list.UIKitPokemonList
                 android:id="@+id/pokemon_list"
                 android:layout_width="match_parent"

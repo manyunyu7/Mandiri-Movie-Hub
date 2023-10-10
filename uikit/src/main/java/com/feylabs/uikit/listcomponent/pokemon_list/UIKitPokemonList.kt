@@ -50,6 +50,17 @@ class UIKitPokemonList : ConstraintLayout {
     fun loadDummyData() {
     }
 
+    fun clear() {
+        mAdapter.data.clear()
+        mAdapter.notifyDataSetChanged()
+
+        if (mAdapter.itemCount == 0) {
+            showSkeleton(skeletonCounts)
+        } else {
+            hideSkeleton()
+        }
+    }
+
     fun showSkeleton(count: Int = skeletonCounts) {
         val parentLayout = binding.uikitListUnboxingPokemonSkeletonContainer
         for (i in 1..count) {
@@ -129,10 +140,6 @@ class UIKitPokemonList : ConstraintLayout {
         }
     }
 
-    fun onUnboxingItemClick(action: (() -> Unit)? = null) {
-        if (action != null) {
-        }
-    }
 
 
     interface OnUnboxingSectoralListOnClickInterface{

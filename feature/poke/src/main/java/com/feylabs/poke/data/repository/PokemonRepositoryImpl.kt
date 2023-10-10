@@ -32,6 +32,7 @@ class PokemonRepositoryImpl @Inject constructor(
     override fun getPokemon(query: String) =
         flow {
             emit(ResponseState.Loading())
+            Timber.d("case12 p0 query is $query")
             if (!NetworkInfo.isOnline(connectivityManager)) {
                 Timber.d("case12 p1 user is offline")
                 val errorMessage = "Tidak Ada Koneksi Internet"
@@ -39,7 +40,17 @@ class PokemonRepositoryImpl @Inject constructor(
                 emit(ResponseState.Error(ErrorResponse(errorMessage = errorMessage)))
                 delay(1000)
                 emit(ResponseState.Success(data))
+
+                if(query.isNotEmpty()){
+                    val dataQ: List<PokemonUiModel> = if(query.isEmpty()){
+                        pokeDb.getAllPokemon().map { it.toPokemonUiModel() }
+                    }else{
+                        pokeDb.findPokemonByName(query).map { it.toPokemonUiModel() }
+                    }
+                    emit(ResponseState.Success(dataQ))
+                }
                 return@flow
+
             }else{
                 Timber.d("case12 p2 user is online")
             }
@@ -56,6 +67,7 @@ class PokemonRepositoryImpl @Inject constructor(
                     val data: List<PokemonUiModel> = if(query.isEmpty()){
                         pokeDb.getAllPokemon().map { it.toPokemonUiModel() }
                     }else{
+                        Timber.d("case12 p4b load with filter ")
                         pokeDb.findPokemonByName(query).map { it.toPokemonUiModel() }
                     }
 

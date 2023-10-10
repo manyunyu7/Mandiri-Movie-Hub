@@ -57,14 +57,7 @@
                         android:textStyle="bold"
                         tools:text="Nama Pokemon Disini" />
 
-                    <TextView
-                        android:id="@+id/label_movie_date"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_display_regular"
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        tools:text="20/20/2020" />
+
 
                 </LinearLayout>
             </FrameLayout>
@@ -95,7 +88,6 @@
                             android:src="@drawable/dark_placeholder" />
 
                     </androidx.cardview.widget.CardView>
-
 
                 </LinearLayout>
 

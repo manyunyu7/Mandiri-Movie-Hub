@@ -3,10 +3,12 @@ package com.feylabs.feat_ui_home.ui
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.feylabs.core.base.BaseFragment
+import com.feylabs.core.helper.toast.ToastHelper.showToast
 import com.feylabs.shared_dependencies.R as sharedR
 import com.feylabs.feat_ui_home.databinding.FragmentSnipsHomeBinding
 import com.feylabs.uikit.listcomponent.pokemon_list.PokemonListAdapter
@@ -62,6 +64,25 @@ class SnipsHomeFragment : BaseFragment<FragmentSnipsHomeBinding>(
 
     override fun initAction() {
 
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                viewModel.fetchPokemon(query.orEmpty())
+                binding.pokemonList.clear()
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                // Handle the text change in the search view
+                // You might want to filter your Pokemon list based on the newText
+
+                if(newText?.isEmpty() == true){
+                    viewModel.fetchPokemon("")
+                    binding.pokemonList.clear()
+                }
+
+                return true
+            }
+        })
         binding.pokemonList.setClickInterface(object : PokemonListAdapter.ItemInterface{
             override fun onClick(string: String) {
                 val deepLink = Uri.parse(
