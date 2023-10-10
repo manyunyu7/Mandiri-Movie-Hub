@@ -7,6 +7,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.webkit.WebView
 import androidx.fragment.app.viewModels
+import com.bumptech.glide.Glide
 import com.feylabs.core.base.BaseFragment
 import com.feylabs.core.helper.toast.ToastHelper.showToast
 import com.feylabs.core.helper.view.ViewUtils.gone
@@ -50,37 +51,21 @@ class PokemonDetailFragment : BaseFragment<FragmentPokemonDetailBinding>(
                         binding.loadingIndicator.gone()
                         val movieData = value.data
                         movieData?.apply {
-                            binding.labelMovieTitle.text=name
-//                            binding.labelMovieDate.text=releaseDate
-//                            binding.labelProductionHouse.text=productionCompanies
-//                            binding.labelGenres.text=genres
+                            binding.labelPokemonName.text=name
+                            binding.labelAbilities.text=abilities
 
-//                            if(videoUrl.isNotEmpty()){
-//                                binding.trailerContainer.visible()
-//                                val webView = binding.webView
-//
-//                                val view = binding.webView
-//                                view.webViewClient = object : WebViewClient() {
-//                                    override fun onPageFinished(view: WebView, url: String) {
-//                                        super.onPageFinished(view, url)
-//                                        // Inject JavaScript to hide the element with ID "title"
-//                                        view.loadUrl("javascript:(function() { " +
-//                                                "var element = document.getElementById('title'); " +
-//                                                "element.style.display='none'; " +
-//                                                "})()")
-//                                        //emulateClick(view)
-//                                    }
-//                                }
-//                                view.settings.setAppCacheEnabled(true)
-//                                view.settings.javaScriptEnabled = true
-//                                view.settings.setAppCachePath(requireContext().cacheDir.absolutePath)
-//                                view.settings.cacheMode = WebSettings.LOAD_CACHE_ELSE_NETWORK
-//                                view.settings.mediaPlaybackRequiresUserGesture = false
-//                                view.loadUrl("${getFullPathVideoUrl()}")
-//
-//                            }else{
-//                                binding.trailerContainer.gone()
-//                            }
+                            Glide
+                                .with(requireContext())
+                                .load(this.backdrop)
+                                .dontAnimate() //so there's no weird crossfade
+                                .into(binding.imgBackdrop)
+
+                            Glide
+                                .with(requireContext())
+                                .load(this.spriteFrontDefault)
+                                .dontAnimate() //so there's no weird crossfade
+                                .into(binding.imgCover)
+
                         }
                     }
                 }

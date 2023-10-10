@@ -4,7 +4,12 @@ import timber.log.Timber
 
 data class PokemonDetailUiModel(
     val name: String,
-    val url: String
+    val url: String,
+    val spriteFrontDefault :String,
+    val abilities :String,
+    val types :String,
+    val stats :String,
+    val backdrop:String
 ) {
     fun getImage(): String {
         // Extract the Pokemon ID from the URL using string manipulation

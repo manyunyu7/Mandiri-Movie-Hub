@@ -47,7 +47,7 @@
                     android:paddingBottom="5dp">
 
                     <TextView
-                        android:id="@+id/label_movie_title"
+                        android:id="@+id/label_pokemon_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/sf_pro_display_regular"
@@ -55,7 +55,7 @@
                         android:textSize="25sp"
                         android:text="Loading"
                         android:textStyle="bold"
-                        tools:text="Judul Film Disini" />
+                        tools:text="Nama Pokemon Disini" />
 
                     <TextView
                         android:id="@+id/label_movie_date"
@@ -96,58 +96,7 @@
 
                     </androidx.cardview.widget.CardView>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            tools:ignore="UseCompoundDrawables">
-                            <!--            I Ignore this because setting imagedrawable for
-                                            textview with glide is hard, this is much simpler
-                            -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/montserrat_regular"
-                                android:text="Original Voice Language"
-                                android:textColor="@color/black"
-                                android:textSize="13sp"
-                                tools:text="Language" />
 
-                            <TextView
-                                android:id="@+id/label_movie_language"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/dimen_10dp"
-                                android:fontFamily="@font/sf_pro_display_regular"
-                                android:textColor="@color/black"
-                                android:textSize="15sp"
-                                tools:text="Genre : " />
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/label_movie_rate"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/sf_pro_display_regular"
-                            android:textColor="@color/black"
-                            android:textSize="15sp"
-                            tools:text="Rating : ⭐⭐⭐⭐" />
-
-                        <TextView
-                            android:id="@+id/label_see_review"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/sf_pro_display_regular"
-                            android:textColor="@android:color/holo_blue_light"
-                            android:textSize="15sp"
-                            android:text="Lihat Review"
-                            tools:text="Genre : " />
-
-                    </LinearLayout>
                 </LinearLayout>
 
                 <TextView
@@ -155,13 +104,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/sf_pro_display_regular"
-                    android:text="Storyboard"
+                    android:text="Abilities"
                     android:textColor="@color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/label_storyboard"
+                    android:id="@+id/label_abilities"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_pro_display_regular"
@@ -174,72 +123,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/sf_pro_display_regular"
-                    android:text="Production House"
+                    android:text="Types"
                     android:textColor="@color/black"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/label_production_house"
+                    android:id="@+id/label_types"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sf_pro_display_regular"
                     android:text="Loading"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:text="Genres"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/label_genres"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/sf_pro_display_regular"
-                    android:text="Loading"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
-
-                <LinearLayout
-                    android:id="@+id/trailer_container"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    tools:visibility="visible"
-                    android:layout_marginBottom="@dimen/dimen_20dp"
-                    android:layout_marginTop="@dimen/dimen_20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:fontFamily="@font/sf_pro_display_regular"
-                        android:text="Trailer"
-                        android:layout_marginBottom="@dimen/dimen_10dp"
-                        android:textColor="@color/black"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/container_video"
-                        app:cardCornerRadius="@dimen/dimen_20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="250sp">
-                        <WebView
-                            android:layout_width="match_parent"
-                            android:layout_height="250sp"
-                            android:id="@+id/webView"/>
-
-                    </androidx.cardview.widget.CardView>
-                </LinearLayout>
 
 
 
