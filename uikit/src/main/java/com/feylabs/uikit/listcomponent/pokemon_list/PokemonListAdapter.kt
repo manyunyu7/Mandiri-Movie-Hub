@@ -20,8 +20,6 @@ class PokemonListAdapter() :
     }
 
 
-
-
     override fun onBindViewHolder(holder: PokemonListAdapter.ViewHolder, position: Int) {
         holder.bind(data[position])
     }
@@ -44,7 +42,7 @@ class PokemonListAdapter() :
                 val context = this.binding.root.context
                 itemView.setOnClickListener {
                     if (::itemInterface.isInitialized)
-                        itemInterface.onClick(data.url.toString())
+                        itemInterface.onClick(data.title.toString())
                 }
 
                 with(binding) {

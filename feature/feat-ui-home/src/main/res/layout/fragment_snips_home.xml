@@ -24,15 +24,6 @@
             android:layout_height="0dp"
             android:orientation="vertical">
 
-            <com.feylabs.uikit.blockcomponent.UIKitSectionMenu
-                android:id="@+id/menu_unboxing_sector"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:layout_marginTop="@dimen/dimen_20dp"
-                app:sectionSeeAll="Lihat Semua"
-                app:sectionTitle="Unboxing Sektor" />
-
 
             <com.feylabs.uikit.blockcomponent.UIKitSectionMenu
                 android:id="@+id/menu_genres"
@@ -40,31 +31,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_20dp"
                 app:sectionSeeAll=""
-                app:sectionTitle="Genre Film" />
+                app:sectionTitle="Pokemon List" />
 
             <com.feylabs.uikit.listcomponent.pokemon_list.UIKitPokemonList
                 android:id="@+id/pokemon_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-
-            <com.feylabs.uikit.blockcomponent.UIKitSectionMenu
-                android:id="@+id/menu_snip"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_20dp"
-                android:visibility="gone"
-                app:sectionSeeAll="Lihat Semua"
-                app:sectionTitle="Snip Terbaru" />
-
-
-            <com.feylabs.uikit.blockcomponent.UIKitSectionMenu
-                android:id="@+id/menu_unboxing_stock"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:layout_marginTop="@dimen/dimen_20dp"
-                app:sectionSeeAll="Lihat Semua"
-                app:sectionTitle="Unboxing Saham" />
 
 
         </LinearLayout>

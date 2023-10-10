@@ -2,6 +2,7 @@ package com.feylabs.poke.domain.interactor
 
 import com.feylabs.core.helper.wrapper.ResponseState
 import com.feylabs.poke.domain.repository.PokemonRepository
+import com.feylabs.poke.domain.uimodel.PokemonDetailUiModel
 import com.feylabs.poke.domain.uimodel.PokemonUiModel
 import com.feylabs.poke.domain.usecase.PokemonUseCase
 import kotlinx.coroutines.flow.Flow
@@ -16,6 +17,10 @@ class PokemonInteractor @Inject constructor(
         return pokemonRepository.getPokemon(
             query
         )
+    }
+
+    override fun getPokemonDetail(): Flow<ResponseState<List<PokemonDetailUiModel>>> {
+        TODO("Not yet implemented")
     }
 
 }

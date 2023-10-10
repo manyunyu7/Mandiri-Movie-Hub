@@ -62,28 +62,11 @@ class SnipsHomeFragment : BaseFragment<FragmentSnipsHomeBinding>(
 
     override fun initAction() {
 
-        binding.menuSnip.onClickListener {
-            val deepLink = Uri.parse(getString(sharedR.string.route_movies_home)).buildUpon().build()
-            findNavController().navigate(deepLink)
-        }
-
-        binding.menuUnboxingSector.onClickListener {
-            val deepLink =
-                Uri.parse(getString(sharedR.string.route_snips_unboxing_test)).buildUpon().build()
-            findNavController().navigate(deepLink)
-        }
-
-        binding.menuUnboxingStock.onClickListener {
-            val deepLink =
-                Uri.parse(getString(sharedR.string.route_snips_unboxing_test)).buildUpon().build()
-            findNavController().navigate(deepLink)
-        }
-
         binding.pokemonList.setClickInterface(object : PokemonListAdapter.ItemInterface{
             override fun onClick(string: String) {
                 val deepLink = Uri.parse(
-                    getString(sharedR.string.route_movie_by_genre)
-                        .replace("{genreId}", string)
+                    getString(sharedR.string.route_pokemon_detail)
+                        .replace("{name}", string)
                 )
                     .buildUpon()
                     .build()
@@ -100,7 +83,7 @@ class SnipsHomeFragment : BaseFragment<FragmentSnipsHomeBinding>(
     }
 
     override fun initData() {
-        viewModel.getMovie()
+        viewModel.fetchPokemon("")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

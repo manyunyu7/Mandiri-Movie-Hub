@@ -14,7 +14,7 @@ import com.feylabs.uikit.util.RecyclerViewUtil.setStaggeredGridLayoutManager
 
 class UIKitPokemonList : ConstraintLayout {
 
-    private val skeletonCounts: Int = 3
+    private val skeletonCounts: Int = 6
     private val binding: CustomUikitListPokemonBinding =
         CustomUikitListPokemonBinding.inflate(
             LayoutInflater.from(context),

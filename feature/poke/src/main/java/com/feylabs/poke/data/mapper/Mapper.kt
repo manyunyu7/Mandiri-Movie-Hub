@@ -2,7 +2,9 @@ package com.feylabs.poke.data.mapper
 
 
 import com.feylabs.poke.data.source.local.entity.PokemonEntity
+import com.feylabs.poke.data.source.remote.dto.pokemon.PokemonDetailResponseDto
 import com.feylabs.poke.data.source.remote.dto.pokemon.PokemonResponseDto
+import com.feylabs.poke.domain.uimodel.PokemonDetailUiModel
 import com.feylabs.poke.domain.uimodel.PokemonUiModel
 
 object Mapper {
@@ -19,6 +21,13 @@ object Mapper {
         return PokemonUiModel(
             url = this.url.orEmpty(),
             name = this.name.orEmpty()
+        )
+    }
+
+    fun PokemonDetailResponseDto.toPokemonDetailUiModel(): PokemonDetailUiModel {
+        return PokemonDetailUiModel(
+            name = this.name.orEmpty(),
+            url = ""
         )
     }
 
