@@ -11,4 +11,8 @@ interface PokemonDao {
     @Query("SELECT * FROM pokemon_items WHERE name LIKE :name")
     fun findPokemonByName(name: String): List<PokemonEntity>
 
+    @Query("SELECT * FROM pokemon_items")
+    fun getAllPokemon(): List<PokemonEntity>
+
+
 }

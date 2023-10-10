@@ -35,7 +35,7 @@ class SnipsHomeViewModel @Inject constructor(
 
     class PokemonListState(
         val isLoading: Boolean = false,
-        val movieList: List<PokemonUiModel> = emptyList<PokemonUiModel>(),
+        val list: List<PokemonUiModel> = emptyList<PokemonUiModel>(),
         var error: String = ""
     )
 
@@ -58,7 +58,7 @@ class SnipsHomeViewModel @Inject constructor(
                 when (it) {
                     is ResponseState.Loading -> state.value = PokemonListState(isLoading = true)
                     is ResponseState.Success -> state.value =
-                        PokemonListState(movieList = it.data ?: emptyList())
+                        PokemonListState(list = it.data ?: emptyList())
 
                     is ResponseState.Error -> state.value = PokemonListState(
                         isLoading = false,

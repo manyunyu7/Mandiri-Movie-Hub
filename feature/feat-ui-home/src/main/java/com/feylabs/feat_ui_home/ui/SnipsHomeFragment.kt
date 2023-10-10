@@ -4,23 +4,18 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.feylabs.core.base.BaseFragment
-import com.feylabs.core.helper.toast.ToastHelper.showToast
 import com.feylabs.shared_dependencies.R as sharedR
 import com.feylabs.feat_ui_home.databinding.FragmentSnipsHomeBinding
-import com.feylabs.uikit.listcomponent.movie_genre.MovieGenreItemAdapter
-import com.feylabs.uikit.listcomponent.movie_genre.UIKitUnboxingMovieGenreList
+import com.feylabs.uikit.listcomponent.pokemon_list.PokemonListAdapter
 import com.feylabs.uikit.listcomponent.uikitmodel.MovieGenreUIKitModel
-import com.feylabs.uikit.listcomponent.uikitmodel.UnboxingSectoralUIKitModel
+import com.feylabs.uikit.listcomponent.uikitmodel.PokemonUiKitModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.net.URLEncoder
-import java.nio.charset.StandardCharsets
 
 
 @AndroidEntryPoint
@@ -37,7 +32,7 @@ class SnipsHomeFragment : BaseFragment<FragmentSnipsHomeBinding>(
     override fun initObserver() {
 
         CoroutineScope(Dispatchers.Main).launch {
-            viewModel.movieGenreListValue.collect { state ->
+            viewModel.pokemonListValue.collect { state ->
                 when {
                     state.isLoading -> {
                         // Show loading progress
@@ -47,14 +42,14 @@ class SnipsHomeFragment : BaseFragment<FragmentSnipsHomeBinding>(
                         // Show error message
                     }
 
-                    state.movieList.isNotEmpty() -> {
-                        state.movieList.forEachIndexed { index, unboxingListItemUIModel ->
+                    state.list.isNotEmpty() -> {
+                        state.list.forEachIndexed { index, unboxingListItemUIModel ->
                         }
-                        binding.movieGenre.addDatas(state.movieList.map {
-                            MovieGenreUIKitModel(
-                                title = it.title,
-                                id = it.id,
-                                image = it.getImageUrl()
+                        binding.pokemonList.addDatas(state.list.map {
+                            PokemonUiKitModel(
+                                title = it.name,
+                                image = it.getImage(),
+                                url = it.url
                             )
                         })
                     }
@@ -84,7 +79,7 @@ class SnipsHomeFragment : BaseFragment<FragmentSnipsHomeBinding>(
             findNavController().navigate(deepLink)
         }
 
-        binding.movieGenre.setClickInterface(object :MovieGenreItemAdapter.ItemInterface{
+        binding.pokemonList.setClickInterface(object : PokemonListAdapter.ItemInterface{
             override fun onClick(string: String) {
                 val deepLink = Uri.parse(
                     getString(sharedR.string.route_movie_by_genre)
