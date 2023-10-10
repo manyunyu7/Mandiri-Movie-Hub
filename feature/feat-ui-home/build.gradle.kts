@@ -45,6 +45,7 @@ dependencies {
     api(project(":uikit"))
 
     implementation(project(":feature:movie-genre"))
+    implementation(project(":feature:poke"))
     implementation(project(":feature:feat-ui-movie-by-genre"))
     implementation(project(":feature:feat-ui-movie-reviews"))
 

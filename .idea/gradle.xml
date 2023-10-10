@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/feature/feat-ui-movie-by-genre" />
             <option value="$PROJECT_DIR$/feature/feat-ui-movie-reviews" />
             <option value="$PROJECT_DIR$/feature/movie-genre" />
+            <option value="$PROJECT_DIR$/feature/poke" />
             <option value="$PROJECT_DIR$/shared-dependencies" />
             <option value="$PROJECT_DIR$/uikit" />
           </set>
