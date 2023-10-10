@@ -19,8 +19,9 @@ class PokemonInteractor @Inject constructor(
         )
     }
 
-    override fun getPokemonDetail(): Flow<ResponseState<List<PokemonDetailUiModel>>> {
-        TODO("Not yet implemented")
+    override fun getPokemonDetail(name: String): Flow<ResponseState<PokemonDetailUiModel>> {
+        return pokemonRepository.getDetailPokemon(name)
     }
+
 
 }

@@ -12,7 +12,8 @@ interface PokemonUseCase {
     ):Flow<ResponseState<List<PokemonUiModel>>>
 
     fun getPokemonDetail(
-    ):Flow<ResponseState<List<PokemonDetailUiModel>>>
+        name:String
+    ): Flow<ResponseState<PokemonDetailUiModel>>
 
 
 }
